@@ -1,0 +1,76 @@
+fruits=["apple","mango","banana","orange"]
+voted_user=[]
+votes={"apple":0,"mango":0,"banana":0,"orange":0}
+
+
+
+while True:
+    
+    
+    print("\n---Fruit Voting App ---")
+    print("1.Vote")
+    print("2.Show Results")
+    print("3.Show Winner")
+    print("4.Exit")
+
+    ch=input("Enter your choice:")
+    
+    if ch=='1':
+       name=input("Enter your name")
+       if name in voted_user:
+          print("You already voted")
+          continue
+       else:
+          voted_user.append(name)
+       fruit=input("Enter your favourit fruit").lower()
+       if fruit in fruits:
+          if fruit in votes:
+             votes[fruit]+=1
+          else:
+             votes[fruit]=1
+
+       else:
+          print("Invalid fruits")
+ 
+
+    elif ch=='2':
+       print("Voting Results:")
+       for i in votes:
+            print(f"{i}:{votes[i]} votes")
+
+    elif ch=='3':
+        
+       winner=max(votes,key=votes.get)
+       print(f"The winner fruit is : {winner} with {votes[winner]} votes!")
+
+    elif ch=='4':
+        print("Thanks for using app!")
+
+        break
+    else:
+        print("Wrong choice,Try again")
+ 
+        
+        
+        
+            
+        
+        
+        
+
+
+
+    
+
+ 
+        
+        
+        
+            
+        
+        
+        
+
+
+
+    
